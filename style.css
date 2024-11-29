@@ -14,6 +14,7 @@ body {
 /* Экран загрузки */
 #loading-screen {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -30,25 +31,49 @@ body {
   font-size: 24px;
   font-weight: bold;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  animation: blink 1.5s infinite;
 }
 
 .loading-bar .progress {
-  width: 0;
-  height: 5px;
-  background: white;
-  animation: progress-animation 3s linear forwards;
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-@keyframes progress-animation {
-  to {
+.loading-bar .progress-bar {
+  width: 0;
+  height: 100%;
+  background: white;
+  animation: loading 3s linear forwards;
+  border-radius: 5px;
+}
+
+/* Анимации */
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
     width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
   }
 }
 
 /* Основной контент */
 #main-content {
   text-align: center;
+  display: none;
 }
 
 .weather-container {
