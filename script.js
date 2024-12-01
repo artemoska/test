@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("Animation ready!");
+  console.log("Animation loaded successfully!");
 });
