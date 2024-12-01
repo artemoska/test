@@ -1,49 +1,85 @@
-/* Убираем стандартные отступы и задаем черный фон */
+/* Основной фон */
 body {
-    background-color: black;
     margin: 0;
-    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
 /* Контейнер для текста */
-.text-container {
+.container {
     text-align: center;
-    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стиль для текста с анимацией */
+.animated-text {
+    font-size: 10vw; /* Строки занимают примерно 100% ширины экрана */
+    font-weight: bold;
     color: transparent;
-    background: linear-gradient(90deg, red, blue); /* Красно-синий градиент */
-    -webkit-background-clip: text; /* Для обрезки фона по тексту */
-    animation: fade-in 1s ease-in-out forwards; /* Анимация для контейнера */
-}
-
-/* Общие стили для всех строк */
-.text-container p {
-    margin: 10px 0;
-    transform: translateY(50px);
+    background-image: linear-gradient(to left, red, blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: slideUp 3s ease-in-out forwards, fadeOut 3s ease-in-out forwards;
     opacity: 0;
-    animation: slide-up 1s ease-in-out forwards;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
 }
 
-/* Задержка анимации для каждой строки */
-.text-container p:nth-child(1) { animation-delay: 0s; }
-.text-container p:nth-child(2) { animation-delay: 0.5s; }
-.text-container p:nth-child(3) { animation-delay: 1s; }
-.text-container p:nth-child(4) { animation-delay: 1.5s; }
-.text-container p:nth-child(5) { animation-delay: 2s; }
-.text-container p:nth-child(6) { animation-delay: 2.5s; }
-.text-container p:nth-child(7) { animation-delay: 3s; }
-
-/* Анимация выезда снизу */
-@keyframes slide-up {
+/* Плавная анимация выезда строки */
+@keyframes slideUp {
     0% {
-        transform: translateY(50px);
+        transform: translateX(100vw); /* Начало с правого края экрана */
         opacity: 0;
     }
-    100% {
-        transform: translateY(0);
+    50% {
+        transform: translateX(0); /* Строка встает на место */
         opacity: 1;
     }
+    100% {
+        transform: translateX(-100vw); /* Строка уходит влево */
+        opacity: 0;
+    }
+}
+
+/* Плавное исчезновение строки */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Задержка для каждой строки */
+.animated-text:nth-child(1) {
+    animation-delay: 0s;
+}
+.animated-text:nth-child(2) {
+    animation-delay: 3s;
+}
+.animated-text:nth-child(3) {
+    animation-delay: 6s;
+}
+.animated-text:nth-child(4) {
+    animation-delay: 9s;
+}
+.animated-text:nth-child(5) {
+    animation-delay: 12s;
+}
+.animated-text:nth-child(6) {
+    animation-delay: 15s;
+}
+.animated-text:nth-child(7) {
+    animation-delay: 18s;
 }
