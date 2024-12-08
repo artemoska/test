@@ -3,17 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гиперпоп Вампир</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Artemoska - Personal Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        nav {
+            background-color: #4CAF50;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #45a049;
+        }
+        .content {
+            padding: 30px;
+            background-color: #ffffff;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        .projects {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .project {
+            background-color: #87CEFA;
+            padding: 15px;
+            border-radius: 8px;
+            width: 30%;
+            box-sizing: border-box;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    <div id="player-container">
-        <button id="play-button">▶️ Воспроизвести</button>
-        <audio id="audio" src="song.mp3"></audio>
+
+<header>
+    <h1>Welcome to Artemoska's Space!</h1>
+    <p>Tech, Gaming, Music & More</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="content" id="about">
+    <h2>About Artemoska</h2>
+    <p>Welcome to the personal page of Artemoska! Here, you can explore various tech projects, articles, and insights into gaming and entertainment. Artemoska is passionate about programming, building personal websites, and creating cool bots. Explore more about their work and contributions below!</p>
+</div>
+
+<div class="content" id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="project">
+            <h3>Personal Website</h3>
+            <p>A simple and elegant site to showcase personal projects and interests. Built with HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="project">
+            <h3>Artemosbot</h3>
+            <p>A fun bot project that integrates with various platforms, enhancing user experience with smart interactions.</p>
+        </div>
+        <div class="project">
+            <h3>ArtCAR2-D Game</h3>
+            <p>An engaging 2D game designed and developed by Artemoska, featuring simple mechanics and fun gameplay.</p>
+        </div>
     </div>
-    <div id="text-container">
-        <!-- Текст появится автоматически через JavaScript -->
-    </div>
-    <script src="script.js"></script>
+</div>
+
+<footer>
+    <p>Connect with Artemoska: <a href="https://github.com/artemoska" target="_blank" style="color:white;">GitHub</a> | <a href="https://www.youtube.com/channel/UCgsOJe8MP9SDxITPc_blCqA" target="_blank" style="color:white;">YouTube</a></p>
+</footer>
+
 </body>
 </html>
